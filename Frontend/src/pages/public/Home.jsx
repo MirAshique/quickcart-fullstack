@@ -29,11 +29,15 @@ const Home = () => {
     <div className="space-y-24">
 
       {/* ================= HERO SECTION ================= */}
-      <section className="max-w-7xl mx-auto px-6 pt-28 pb-16 grid md:grid-cols-2 gap-12 items-center">
-        
+      <section className="relative overflow-hidden max-w-7xl mx-auto px-6 pt-32 pb-20 grid md:grid-cols-2 gap-12 items-center">
+
+        {/* Animated Background Shapes */}
+        <div className="absolute -top-20 -left-20 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-pulse"></div>
+
         {/* LEFT CONTENT */}
-        <div>
-          <h1 className="text-5xl font-bold tracking-tight leading-tight">
+        <div className="relative z-10">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight">
             Modern Shopping,
             <span className="text-primary"> Simplified.</span>
           </h1>
@@ -46,14 +50,14 @@ const Home = () => {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               to="/products"
-              className="px-6 py-3 bg-primary text-white rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300"
+              className="px-6 py-3 bg-primary text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Browse Products
             </Link>
 
             <Link
               to="/register"
-              className="px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+              className="px-6 py-3 backdrop-blur-md bg-white/30 dark:bg-white/10 border border-white/40 dark:border-white/20 rounded-2xl hover:scale-105 transition-all duration-300"
             >
               Get Started
             </Link>
@@ -61,8 +65,27 @@ const Home = () => {
         </div>
 
         {/* RIGHT VISUAL */}
-        <div className="hidden md:block">
-          <div className="bg-gradient-to-br from-primary to-secondary rounded-3xl h-80 shadow-soft"></div>
+        <div className="relative z-10 hidden md:flex justify-center items-center">
+
+          {/* Glass Card */}
+          <div className="relative backdrop-blur-2xl bg-white/20 dark:bg-white/5 border border-white/30 dark:border-white/10 rounded-3xl p-10 shadow-2xl">
+
+            {/* Laptop Image */}
+            <img
+              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop"
+              alt="Laptop"
+              className="w-72 rounded-2xl shadow-xl transform rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500"
+            />
+
+            {/* Floating iPhone */}
+            <img
+              src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=600&auto=format&fit=crop"
+              alt="iPhone"
+              className="absolute -bottom-6 -right-6 w-32 rounded-2xl shadow-2xl transform -rotate-6 hover:rotate-0 hover:scale-110 transition-all duration-500"
+            />
+
+          </div>
+
         </div>
       </section>
 
@@ -95,7 +118,7 @@ const Home = () => {
       </section>
 
 
-      {/* ================= TRUST SECTION (Enhanced with Icons) ================= */}
+      {/* ================= TRUST SECTION ================= */}
       <section className="bg-gray-50 dark:bg-slate-900 py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
 
